@@ -28,7 +28,7 @@ This is the home page overview
 ##
 Here you can see in the menu page if the item is not being selected then you can't get into checkout page
 ##
-![](screen_shot/menu1.png)
+![](screen_shot/menu2.png)
 ##
 Once you select the item then you will be able to reach out to  the check out page
 
