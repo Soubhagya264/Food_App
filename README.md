@@ -7,3 +7,4 @@ A intents file had been created for training the tflearn model. Nltk library als
 ### Front Page of Website
 ![](screen_shot/front_page.png)
 
+Here you can see the chat bot messages that is visible because of ajax request to the tflearn model
