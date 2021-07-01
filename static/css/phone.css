@@ -1,0 +1,101 @@
+/* Navigation */
+#navbar {
+    flex-direction: column;
+}
+
+#navbar ul li a{
+    font-size: 1rem;
+    padding: 0px 7px;
+    padding-bottom: 8px;
+}
+
+.login-modal{
+    position: absolute;
+    top: 332px;
+
+
+}
+.login-modal #sig-button{
+    margin: 34px 38px;
+
+    display: inline;
+}
+.login-modal #sig-button >button{
+    padding: 4px 6px;
+    font-size: 9px;
+    cursor:pointer;
+    font-weight: bolder;
+    color:white;
+    border: 3px solid rgb(235, 235, 235);
+    font-family: poppins;
+   border-radius: 18px;
+    cursor:pointer;
+   transition: 1.5s;
+}
+
+/* Home section */
+#home{
+    height: 270px;
+    padding: 3px 28px;
+}
+
+#home::before{
+    height: 400px;
+}
+
+#home p{
+    font-size: 13px;
+}
+
+/* Services section  */
+#services{
+    flex-direction: column;
+}
+
+#services .box {
+    padding: 10px;
+    margin: 2px 0px;
+    margin-bottom: 15px;
+}
+
+/* special section */
+#special{
+    flex-wrap: wrap;
+}
+
+
+
+/* Contact us section */
+#contact-box form{
+    width:80%;
+}
+/* Footer */
+
+/* Utility classes */
+.h-primary{
+
+    font-size:26px;
+}
+.btn11{
+    position: absolute;
+    top: 345px;
+    font-size: 9px;
+    padding: 4px 6px;
+    left :50%;
+    margin: 14px -30px;
+    font-weight: bolder;
+    color:white;
+    border: 3px solid rgb(235, 235, 235);
+    font-family: poppins;
+    border-radius: 18px;
+    cursor:pointer;
+   transition: 1.5s;
+   background: initial;
+
+}
+.btn1{
+    font-size: 13px;
+    padding: 4px 8px;
+    margin: auto;
+    display: block;
+}

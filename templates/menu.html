@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+<title>Menu List</title>
+<link rel="stylesheet" href={% static 'css/style2.css' %}>
+<script>
+
+
+</script>
+</head>
+<body>
+
+
+
+<section id="menu-list" class="section-padding">
+<div class="wrapper">
+        <div class="title">
+            <h4>Menu List<span>Our authentic cuisines are best in class but we pride ourselves on serving a delightful Mughlai diner which is our specialty.
+               We also serve different cuisines like Chinese , Thai , Continental  , Indian with our own exciting creations.
+               </span></h4>
+        </div>
+         <form method="POST">
+        {%csrf_token%}
+         
+        <div class="menu">
+        {% for item in item_data%}
+            <div class="single-menu">
+               <img src="{{item.image}}" alt="">
+                <div class="menu-content">
+                    <h4>{{item.name}}  <span>&#8377 {{item.price}}</span></h4>
+                    <p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+                    <div class='container'>
+                    <div>
+                    <label>
+                    <input type='checkbox' name="iname" class='checkfood' value="{{item.name}}:{{item.price}}" onclick="ShowHideDiv(this)">
+                    
+                    <span><b style='font-style:large;'>Add</b></span>
+                    </label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+         
+
+
+
+
+
+
+
+
+    <div id="dvbar" style="display: none">
+    <nav class="nav">
+    <a href='' class="nav__link">
+    <input type='submit' value='Order Now'  class="material-icons nav__icon" >
+   </nav>
+   </div>
+   </form>
+   </section>
+    </body>
+<script type="text/javascript">
+    function ShowHideDiv() {
+    var dvbar = document.getElementById("dvbar");
+    var ischecked =anyCheckbox()
+    if (ischecked == true){
+       dvbar.style.display='block';
+    }else
+    {
+     dvbar.style.display='none';
+    }
+
+}
+function anyCheckbox()
+{
+    var inputElements = document.getElementsByTagName("input");
+    for (var i = 0; i < inputElements.length; i++)
+        if (inputElements[i].type == "checkbox")
+            if (inputElements[i].checked)
+                return true;
+    return false;
+}
+
+
+
+    </script>
+ </html>

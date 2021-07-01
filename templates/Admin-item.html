@@ -1,0 +1,188 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>ItemList</title>
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: white;
+		}
+		.user_card {
+            height:100%;
+			width: 100em;
+			top: 25px;
+			bottom:25px;
+			margin-bottom: auto;
+			background: white;
+			position: relative;
+			
+			justify-content: center;
+			
+			padding: 2px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+		
+	
+	div .item{
+		top:10px;
+    display:block;
+	}
+
+	div .item h2 {
+		font-family: "Times New Roman", Times, serif;
+		font-size:largest;
+		font-weight:bolder;
+	}
+
+	
+	div .total{
+		
+	display: inline-block;
+    float: right;
+    border: 2px solid orange;
+    margin: -5px 220px 0px 0px;
+    padding: 2px;
+    width: 100px;
+    height: 35px
+	}
+	div .total h5{
+	text-align:center;	
+	}
+	div .tot{
+		display:inline-block;
+		margin: 0px 3px 4px 736px;
+
+		
+	} 
+	div .tot p{
+		font-weight:bold;
+		font-family: "Times New Roman", Times, serif;
+		font-size:larger;
+		
+	}
+
+	div .item h2{
+		display: block;
+    margin: 16px ;
+  
+  text-align:center;
+	}
+
+	div .iform{
+		
+	    margin: 15px 30px 15px 30px;
+	}
+	div .tbl{
+      margin: 5px 30px 5px 30px;
+	}
+	div .btn{
+		display: block;
+        margin: auto;
+	}
+	
+	
+	</style>
+  </head>
+  <body>
+    
+
+
+	{% load app_tags %}
+	<div class="container">
+	      
+		<div class="d-flex justify-content-center">
+			<div class="user_card">
+         <div class="item"><h2>Item List </h2></div>
+        <div class='tbl'><table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Price</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for k , v in d.items %}
+    <tr class="table-active">
+      <th scope="row">{{d|get_index:k}}</th>
+      <td>{{k}}</td>
+      <td>{{v}}</td>
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="tot"><p>Total</p></div>
+<div class='total'>
+  <h5>{{d|get_val}}</h5>
+  </div>
+
+<div class="item"><h2>Fill the Address </h2></div>
+
+   <div class="iform">
+   <form action="" method="POST">
+    {%csrf_token%}
+   <input type="hidden" name="items" value="{{d|get_item}}"}>
+   <input type="hidden" name="price" value="{{d|get_val}}">
+ 
+ <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputText4">Name</label>
+      <input type="text" class="form-control" name="name" id="inputText4" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="eg. Main Street 123...">
+  </div>
+  <div class="form-row">
+   
+   <div class="form-group col-md-6">
+      <label for="inputcity">city</label>
+      <input type="text" class="form-control" name="city" id="inputCity" placeholder="eg. Cuttack">
+    </div>
+
+     <div class="form-group col-md-6">
+      <label for="inputText4">Phone Number</label>
+      <input type="tel" class="form-control" name="phone" id="inputText4" placeholder="Ph No">
+    </div>
+     
+    </div>
+    
+  </div> 
+  <div class="btn">
+  <input type="submit" class="btn btn-dark"></div>
+</form>
+   
+   </div>	
+
+				</div>
+			</div>
+		</div>   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
