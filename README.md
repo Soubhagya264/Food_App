@@ -14,8 +14,8 @@ Here you can see the chat bot messages that is visible because of ajax request t
 ![](screen_shot/signup.png)
 
 ### Food Galary Contact and Footer content of the page
-![](screen_shot/food_gal.png)
-![](screen_shot/service.png)
-![](screen_shot/footer.png)
+![](screen_shot/food_gal.png)![](screen_shot/service.png) ![](screen_shot/footer.png)
+
+
 
 This is the home page overview
