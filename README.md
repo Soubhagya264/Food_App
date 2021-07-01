@@ -19,3 +19,13 @@ Here you can see the chat bot messages that is visible because of ajax request t
 
 
 This is the home page overview
+
+## Menu Page
+![](screen_shot/menu1.png)
+Here you can see in the menu page if the item is not being selected then you can't get into checkout page
+![](screen_shot/menu1.png)
+Once you select the item then you will be able to reach out to  the check out page
+
+## Check Out Page
+![](screen_shot/checkout.png)
+In this page you can observe the item that has selected is visible to us and also the price and total price  
