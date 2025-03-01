@@ -35,4 +35,5 @@ Once you select the item then you will be able to reach out to  the check out pa
 ## Check Out Page
 ![](screen_shot/checkout.png)
 ##
-In this page you can observe the item that has selected is visible to us and also the price and total price  
+In this page you can observe the selected Item and there price
+
